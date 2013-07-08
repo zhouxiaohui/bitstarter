@@ -11,7 +11,7 @@ app.get('/', function(request, response) {
     if (err) throw err;
     buff = data;
   });
-  respsonse.send(buff.toString('utf-8'));
+  respsonse.send(buff.toString('utf8'));
 });
 
 var port = process.env.PORT || 5000;
