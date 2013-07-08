@@ -6,11 +6,7 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   //response.send('Hello World 2!');
-  var buff = '';
-  fs.readFileSync('index.html', function (err, data) {
-    if (err) throw err;
-    buff = data;
-  });
+  var buff = fs.readFileSync('index.html');
   respsonse.send(buff.toString('utf8'));
 });
 
