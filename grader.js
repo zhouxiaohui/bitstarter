@@ -73,12 +73,10 @@ if(require.main == module) {
     var html = '';
     if (program.url) {
         // Get html from the URL
-        console.log(program.url);
         rest.get(program.url).on('complete', function(result) {
             if (result instanceof Error) {
                 // DO NOT RETRY
             } else {
-                console.log("###### returning from http ######");
                 checkHtmlAndPrint(result, program.checks);
             }
         });
